@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admins, only: [:session, :registration, :password] do
-    get '/sign_in' => 'devise/session#new'
-    post 'sign_in' => 'devise/sessions#create'
-    delete '/sign_out' => 'devise/session#destroy'
-    get '/sign_up' => 'devise/registration#new'
-    get '/password' => 'devise/password#new'
-  end
+  devise_for :admins, :controllers => {
+    :sessions => 'admin/sessions', 
+    :registration => 'admin/registrations'
+  }
   
   namespace :admin do
     resources :restaurants
