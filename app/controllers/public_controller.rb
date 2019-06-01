@@ -4,6 +4,7 @@ class PublicController < ApplicationController
     end
     
     def list
+        #絞り込み
         @name = params[:name]
         @budget_id = params[:budget_id]
         if !@name then
@@ -13,6 +14,18 @@ class PublicController < ApplicationController
         else
             @restaurants = Restaurant.where('name LIKE ? AND budget_id = ?', "%#{params[:name]}%", params[:budget_id])
         end
+        
+        #ソート
+        @sort = params[:sort]
+        case @sort
+        when "rating" then
+            @restaurants = @restaurants.order(rating: :desc)
+        when "reasonable" then
+            @restaurants = @restaurants.order(budget_id: :asc)
+        when "expensive" then
+            @restaurants = @restaurants.order(budget_id: :desc)
+        end
+        #口コミが実装されたら口コミの多さ順でのソートを実装する
     end
     
     def list_categories
