@@ -1,0 +1,12 @@
+<% @restaurants.each do |restaurant| %>
+<ul>
+    <li><%= restaurant.name %></li>
+    <li><%= restaurant.title %></li>
+    <% restaurant.rating.times do %>
+    <%= "☆" %>
+    <% end %>
+ 
+    <li><%= restaurant.budget.range %></li>
+</ul>
+    
+<% end %>
