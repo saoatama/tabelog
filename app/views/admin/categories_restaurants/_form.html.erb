@@ -1,0 +1,28 @@
+<%= form_for([:admin, @categories_restaurant]) do |form| %>
+  <% if categories_restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(categories_restaurant.errors.count, "error") %> prohibited this categories_restaurant from being saved:</h2>
+
+      <ul>
+      <% categories_restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.number_field :category_id %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :restaurant_id %>
+    <%= form.number_field :restaurant_id %>
+  </div>
+  
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
