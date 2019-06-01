@@ -1,4 +1,4 @@
-class Restarurant < ActiveRecord::Migration[5.2]
+class CreateRestarurant < ActiveRecord::Migration[5.2]
   def change
     create_table :restaurants do |t|
       t.string :name

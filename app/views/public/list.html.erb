@@ -1,0 +1,17 @@
+<% @restaurants.each do |restaurant| %>
+<ul>
+    <li><%= restaurant.name %></li>
+    <li><%= restaurant.title %></li>
+    <% restaurant.rating.times do %>
+    <%= "☆" %>
+    <% end %>
+ 
+    <li><%= restaurant.budget.range %></li>
+</ul>
+
+
+    
+<% end %>
+<% if @restaurants.blank? %>
+    <%= "申し訳ありませんが、検索結果がありません。\n条件を変えてお試しください" %>
+<% end %>
