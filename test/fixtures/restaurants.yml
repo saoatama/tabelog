@@ -4,8 +4,22 @@
   name: "1"
   title: "hogehoge"
   rating: 1
-  budget_day: 1
-  budget_night: 1
+  budget_id: 1
   address: "hogehoge"
   menu: 1
 
+2:
+  name: "レストランレス"
+  title: "hogehoge"
+  rating: 1
+  budget_id: 3
+  address: "hogehoge"
+  menu: 1
+  
+3:
+  name: "キッチンエラ"
+  title: "hogehoge"
+  rating: 1
+  budget_id: 3
+  address: "hogehoge"
+  menu: 1

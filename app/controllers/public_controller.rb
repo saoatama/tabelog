@@ -16,5 +16,8 @@ class PublicController < ApplicationController
     end
     
     def list_categories
+        @category = Category.find(params[:id])
+        @restaurants = @category.restaurants
+        render 'public/list'
     end
 end

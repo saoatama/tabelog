@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   # devise
   devise_for :users
   devise_for :admins, :controllers => {
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :restaurants
     resources :categories
+    resources :categories_restaurants
   end
   
   #public
