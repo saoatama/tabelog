@@ -1,19 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  title: MyString
+1:
+  name: "1"
+  title: "hogehoge"
   rating: 1
   budget_day: 1
   budget_night: 1
-  address: MyText
+  address: "hogehoge"
   menu: 1
 
-two:
-  name: MyString
-  title: MyString
-  rating: 1
-  budget_day: 1
-  budget_night: 1
-  address: MyText
-  menu: 1

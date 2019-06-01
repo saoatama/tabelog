@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: 1
+1:
+  name: "焼肉"
 
-two:
-  name: 1
+2:
+  name: "魚"
+
+3:
+  name: "居酒屋"
