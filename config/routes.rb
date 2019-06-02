@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   post "list/:id" => "public#list_categories"
   get "list" => "public#list"
   post "list" => "public#list"
+  get "show/:id" => "public#show"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

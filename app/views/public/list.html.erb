@@ -1,6 +1,6 @@
 <% @restaurants.each do |restaurant| %>
 <ul>
-    <li><%= restaurant.name %></li>
+    <li><%=link_to restaurant.name, "/show/#{restaurant.id}" %></li>
     <li><%= restaurant.title %></li>
     <% restaurant.rating.times do %>
     <%= "☆" %>
