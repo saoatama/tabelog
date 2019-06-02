@@ -1,6 +1,8 @@
 class PublicController < ApplicationController
+    before_action :set_budgets
+    
     def home
-        
+        @categories = Category.all
     end
     
     def list
@@ -32,5 +34,10 @@ class PublicController < ApplicationController
         @category = Category.find(params[:id])
         @restaurants = @category.restaurants
         render 'public/list'
+    end
+    
+    private
+    def set_budgets
+        @budgets = Budget.all
     end
 end
