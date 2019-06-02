@@ -20,5 +20,10 @@ Rails.application.routes.draw do
   post "list/:id" => "public#list_categories"
   get "list" => "public#list"
   post "list" => "public#list"
+  get "show/:id" => "public#show"
+  get "show/:id/menu" => "public#show_menu"
+  get "show/:id/pictures" => "public#show_pictures"
+  get "show/:id/comments" => "public#show_comments"
+  get "show/:id/map" => "public#show_map"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
