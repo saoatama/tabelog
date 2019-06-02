@@ -2,7 +2,7 @@ class PublicController < ApplicationController
     before_action :set_budgets
     
     def home
-        
+        @categories = Category.all
     end
     
     def list

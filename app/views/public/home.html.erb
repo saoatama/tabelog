@@ -1,1 +1,5 @@
 <%= render 'shared/search' %>
+
+<% @categories.each do |category| %>
+    <%= link_to category.name, "list/#{category.id}" %>
+<% end %>
