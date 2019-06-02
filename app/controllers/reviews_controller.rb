@@ -64,7 +64,7 @@ class ReviewsController < ApplicationController
     if params[:user].to_i==@review.user.id
       @review.destroy
       respond_to do |format|
-        format.html { redirect_to "show/#{@review.restaurant.id}/reviews", notice: 'Review was successfully destroyed.' }
+        format.html { redirect_to "/show/#{@review.restaurant.id}/reviews", notice: 'Review was successfully destroyed.' }
         format.json { head :no_content }
       end
     else
