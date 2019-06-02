@@ -34,5 +34,7 @@ Rails.application.routes.draw do
   get "show/:id/reviews" => "public#show_reviews"
   get "show/:id/map" => "public#show_map"
   post "reviews/new" => "reviews#new"
+  post "reviews/judge/:id" => "reviews#judge" 
+  get "reviews/judge/:id" => "reviews#judge" 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

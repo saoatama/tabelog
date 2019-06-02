@@ -8,3 +8,12 @@
     <% else %>
         <%= link_to "レビューを投稿する", new_user_session_url %>
     <% end %>
+    <% @reviews.each do |review| %>
+        <%= review.title %>
+        <%= "評価" %>
+        <%= review.rating %>
+        <%= "使った金額" %>
+        <%= review.budget.range %>
+        <%= review.review %>
+        <%= link_to 'この投稿を通報する', "/reviews/judge/#{review.id}" %>
+    <% end %>

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:show, :edit, :update, :destroy, :judge]
   before_action :authenticate_admin!, only: [:index]
 
   # GET /reviews
@@ -18,12 +18,14 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @user = params[:user_id]
     @restaurant = params[:restaurant_id]
+    @reported = 1
   end
 
   # GET /reviews/1/edit
   def edit
     @user = @review.user_id
     @restaurant = @review.restaurant_id
+    @reported = @review.reported
   end
 
   # POST /reviews
@@ -59,11 +61,20 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
-    @review.destroy
-    respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
-      format.json { head :no_content }
+    if params[:user].to_i==@review.user.id
+      @review.destroy
+      respond_to do |format|
+        format.html { redirect_to "/show/#{@review.restaurant.id}/reviews", notice: 'Review was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      @review.reported += 10;
+      @review.save
+      redirect_to root_url
     end
+  end
+  
+  def judge
   end
 
   private
@@ -74,6 +85,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:user_id, :restaurant_id, :title, :rating, :review, :budget_id)
+      params.require(:review).permit(:user_id, :restaurant_id, :title, :rating, :review, :budget_id, :reported)
     end
 end
