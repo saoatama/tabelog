@@ -51,7 +51,7 @@ class PublicController < ApplicationController
     end
     
     def show_reviews
-        
+        @reviews = @restaurant.reviews
     end
     
     def show_map
