@@ -24,6 +24,7 @@
         <td><%= restaurant.budget_id %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.menu %></td>
+        <td><%= restaurant.description %></td>
         <td><%= link_to 'Show', [:admin, restaurant] %></td>
         <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', [:admin, restaurant], method: :delete, data: { confirm: 'Are you sure?' } %></td>
