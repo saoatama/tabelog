@@ -1,11 +1,8 @@
 class UserController < ApplicationController
     before_action :authenticate_user!
-    def home
-        @user = User.find(current_user.id)
-        redirect_to "mypage/#{current_user.id}"
-    end
-    
     def my_page
-        
+        unless current_user.id == params[:id].to_i then
+            redirect_to root_url
+        end
     end
 end
