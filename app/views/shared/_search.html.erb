@@ -1,0 +1,7 @@
+<%= form_tag({ controller: :public, action: :list }) do %>
+    <%= label_tag("店名") %>
+    <%= text_field_tag(:name) %>
+    <%= label_tag("予算") %>
+    <%= select_tag 'budget_id', options_from_collection_for_select(@budgets, :id, :range) %>
+    <%= submit_tag ("検索") %>
+    <% end %>
