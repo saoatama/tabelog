@@ -1,0 +1,10 @@
+<%= render 'shared/page' %>
+    <% if current_user then %>
+        <%= form_tag({ controller: :reviews, action: :new }) do %>
+        <%= hidden_field_tag :user_id, value="#{current_user.id}" %>
+        <%= hidden_field_tag :restaurant_id, value="#{@restaurant.id}" %>
+        <%= submit_tag "レビューを投稿する" %>
+         <% end %>
+    <% else %>
+        <%= link_to "レビューを投稿する", new_user_session_url %>
+    <% end %>

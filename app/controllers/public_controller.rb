@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
     before_action :set_budgets
-    before_action :set_restaurant, only: [:show, :show_comments, :show_map, :show_menu, :show_pictures]
+    before_action :set_restaurant, only: [:show, :show_reviews, :show_map, :show_menu, :show_pictures]
     
     def home
         @categories = Category.all
@@ -50,7 +50,8 @@ class PublicController < ApplicationController
     def show_pictures
     end
     
-    def show_comments
+    def show_reviews
+        
     end
     
     def show_map

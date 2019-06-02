@@ -1,0 +1,39 @@
+<%= form_with(model: review, local: true) do |form| %>
+  <% if review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= form.hidden_field :user_id, value: "#{@user}" %>
+  <%= form.hidden_field :restaurant_id, value: "#{@restaurant}" %>
+  <div class="field">
+    <%= form.label :budget_id, value="使った金額" %>
+    <%= form.collection_select :budget_id, Budget.all, :id, :range %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title, value="タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating, value="総合評価" %>
+    <%= form.select :rating, ['1', '2', '3', '4', '5'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review, value="レビュー" %>
+    <%= form.text_area :review %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
