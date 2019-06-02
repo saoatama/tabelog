@@ -6,9 +6,8 @@ Rails.application.routes.draw do
     :sessions => 'user/sessions', 
     :passwords => 'user/passwords'
   }
-  namespace :user do
-    get "user/home" => "user#home"
-  end
+  
+    get "my_page/:id" => "user#my_page"
   
   devise_for :admins, :controllers => {
     :sessions => 'admin/sessions', 
