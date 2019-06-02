@@ -1,0 +1,11 @@
+<%= render 'shared/page' %>
+<% @hash.each do |key, value| %>
+    <% for i in value %>
+        <%= i['headline'] %><br>
+        <% for j in i['dish_list'] %>
+            <%= j['name'] %><br>
+            <%= j['description'] %><br>
+            <%= j['price'] %><br>
+        <% end %>
+    <% end %>
+<% end %>

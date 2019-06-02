@@ -1,5 +1,6 @@
 class PublicController < ApplicationController
     before_action :set_budgets
+    before_action :set_restaurant, only: [:show, :show_comments, :show_map, :show_menu, :show_pictures]
     
     def home
         @categories = Category.all
@@ -37,11 +38,29 @@ class PublicController < ApplicationController
     end
     
     def show
-        @restaurant = Restaurant.find(params[:id])
+    end
+    
+    def show_menu
+        @path = File.expand_path("public/assets/json/#{@restaurant.name}.json", Rails.root)
+        File.open(@path) do |file|
+            @hash = JSON.load(file)
+        end
+    end
+    
+    def show_pictures
+    end
+    
+    def show_comments
+    end
+    
+    def show_map
     end
     
     private
     def set_budgets
         @budgets = Budget.all
+    end
+    def set_restaurant
+         @restaurant = Restaurant.find(params[:id])
     end
 end
