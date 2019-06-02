@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   
   # devise
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'user/registrations',
+    :sessions => 'user/sessions', 
+    :passwords => 'user/passwords'
+  }
+  namespace :user do
+    get "user/home" => "user#home"
+  end
+  
   devise_for :admins, :controllers => {
     :sessions => 'admin/sessions', 
-    :registration => 'admin/registrations'
+    :registrations => 'admin/registrations'
   }
   
   #admin

@@ -1,3 +1,4 @@
+<%= link_to "ログイン", new_user_session_url %>
 <%= form_tag({ controller: :public, action: :list }) do %>
     <%= label_tag("店名") %>
     <%= text_field_tag(:name) %>
