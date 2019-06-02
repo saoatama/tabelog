@@ -13,6 +13,7 @@
   
   <%= form.hidden_field :user_id, value: "#{@user}" %>
   <%= form.hidden_field :restaurant_id, value: "#{@restaurant}" %>
+  <%= form.hidden_field :reported, value: "#{@reported}" %>
   <div class="field">
     <%= form.label :budget_id, value="使った金額" %>
     <%= form.collection_select :budget_id, Budget.all, :id, :range %>

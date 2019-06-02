@@ -15,4 +15,5 @@
         <%= "使った金額" %>
         <%= review.budget.range %>
         <%= review.review %>
+        <%= link_to 'この投稿を通報する', "/reviews/judge/#{review.id}" %>
     <% end %>

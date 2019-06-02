@@ -1,0 +1,11 @@
+<%= form_tag({ controller: :reviews, action: :destroy }, method: 'delete') do %>
+    <%= hidden_field_tag :id, value="#{params[:id]}" %>
+    <% if current_user %>
+        <%= hidden_field_tag :user, value="#{current_user.id}" %>
+    <% else %>
+        <%= hidden_field_tag :user, value="0" %>
+    <% end %>
+    <%#= label_tag :reason, value: "通報理由をご記入ください" %>
+    <%= text_field_tag :reason %>
+    <%= submit_tag "通報する" %>
+<% end %>
