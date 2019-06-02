@@ -1,1 +1,7 @@
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout" %>
+<% @user.reviews.each do |review| %>
+    <%= review.restaurant.name %>
+    <%= review.title %>
+    <%= review.review %>
+    <%= review.updated_at %>
+<% end %>
