@@ -1,6 +1,7 @@
 class ReservesController < ApplicationController
   before_action :set_reserf, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, only[:index, destroy]
+  
   # GET /reserves
   # GET /reserves.json
   def index
@@ -69,6 +70,6 @@ class ReservesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserf_params
-      params.require(:reserf).permit(:references, :date, :time, :name, :member, :e_mail, :is_smoke, :is_reserved)
+      params.require(:reserve).permit(:restaurants_id, :date, :time, :name, :member, :e_mail, :is_smoke, :is_reserved)
     end
 end
