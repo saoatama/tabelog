@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>References:</strong>
+  <%= @reserf.references %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reserf.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @reserf.time %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reserf.name %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @reserf.member %>
+</p>
+
+<p>
+  <strong>E mail:</strong>
+  <%= @reserf.e_mail %>
+</p>
+
+<p>
+  <strong>Is smoke:</strong>
+  <%= @reserf.is_smoke %>
+</p>
+
+<p>
+  <strong>Is reserved:</strong>
+  <%= @reserf.is_reserved %>
+</p>
+
+<%= link_to 'Edit', edit_reserf_path(@reserf) %> |
+<%= link_to 'Back', reserves_path %>
