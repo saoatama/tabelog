@@ -1,0 +1,47 @@
+<%= form_with(model: reserf, local: true) do |form| %>
+  <% if reserf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reserf.errors.count, "error") %> prohibited this reserf from being saved:</h2>
+
+      <ul>
+      <% reserf.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :restaurant_id %>
+    <%= form.text_field :restaurant_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.number_field :time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :member %>
+    <%= form.number_field :member %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :e_mail %>
+    <%= form.text_field :e_mail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
