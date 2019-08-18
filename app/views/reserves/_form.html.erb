@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :restaurants_id %>
-    <%= form.number_field :restaurants_id %>
+    <%= form.hidden_field :restaurants_id, :value => "#{params[:restaurant_id]}" %>
   </div>
 
   <div class="field">

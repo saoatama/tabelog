@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  post "reserves/new" => "reserves#new"
   resources :reserves
   resources :reviews
   # devise
