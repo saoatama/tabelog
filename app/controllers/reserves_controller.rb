@@ -70,6 +70,6 @@ class ReservesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserf_params
-      params.require(:reserve).permit(:restaurants_id, :date, :time, :name, :member, :e_mail, :is_smoke, :is_reserved)
+      params.require(:reserve).permit(:restaurant_id, :date, :time, :name, :member, :e_mail, :is_smoke, :is_reserved)
     end
 end
