@@ -1,6 +1,6 @@
 class ReservesController < ApplicationController
   before_action :set_reserf, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, only[:index, destroy]
+  before_action :authenticate_admin!, only: [:index, :destroy]
   
   # GET /reserves
   # GET /reserves.json
