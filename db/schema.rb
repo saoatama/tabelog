@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(version: 2019_08_18_022435) do
     t.integer "rating"
     t.integer "budget_id"
     t.text "address"
+    t.integer "menu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.string "menu"
   end
 
   create_table "reviews", force: :cascade do |t|
