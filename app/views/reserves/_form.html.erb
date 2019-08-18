@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :references %>
-    <%= form.number_field :references %>
+    <%= form.label :restaurants_id %>
+    <%= form.number_field :restaurants_id %>
   </div>
 
   <div class="field">
@@ -42,13 +42,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :is_smoke %>
+    <%= form.label :is_smoke, "喫煙席希望" %>
     <%= form.check_box :is_smoke %>
   </div>
 
   <div class="field">
-    <%= form.label :is_reserved %>
-    <%= form.check_box :is_reserved %>
+    <%#= form.label :is_reserved %>
+    <%= form.hidden_field :is_reserved %>
   </div>
 
   <div class="actions">

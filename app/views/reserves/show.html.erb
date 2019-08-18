@@ -1,44 +1,29 @@
-<p id="notice"><%= notice %></p>
-
+<p id="notice"><%= notice %></p><p>
+<%= @reserf.name %>様
+<p>この度はTABLOGのご利用ありがとうございました。<br>予約はまだ完了していません。店舗からの連絡をもって予約完了となります。<br>今しばらくお待ちくださいませ。</p>
 <p>
-  <strong>References:</strong>
-  <%= @reserf.references %>
+  <strong>予約日時:</strong>
+  <%= @reserf.date %><%= @reserf.time %>時から
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @reserf.date %>
+  <strong>ご利用人数:</strong>
+  <%= @reserf.member %>名様
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @reserf.time %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @reserf.name %>
-</p>
-
-<p>
-  <strong>Member:</strong>
-  <%= @reserf.member %>
-</p>
-
-<p>
-  <strong>E mail:</strong>
+  <strong>ご連絡先:</strong>
   <%= @reserf.e_mail %>
 </p>
 
 <p>
-  <strong>Is smoke:</strong>
-  <%= @reserf.is_smoke %>
+  <strong>喫煙席希望:</strong>
+  <% if @reserf.is_smoke==0 %>
+  希望しない
+  <% else %>
+  希望する
+  <% end %>
 </p>
 
-<p>
-  <strong>Is reserved:</strong>
-  <%= @reserf.is_reserved %>
-</p>
-
-<%= link_to 'Edit', edit_reserf_path(@reserf) %> |
-<%= link_to 'Back', reserves_path %>
+<%= link_to '予約を修正する', edit_reserf_path(@reserf) %> |
+<%= link_to 'Homeに戻る', root_path %>
