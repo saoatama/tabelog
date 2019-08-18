@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_072240) do
+ActiveRecord::Schema.define(version: 2019_08_18_022435) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,16 +41,32 @@ ActiveRecord::Schema.define(version: 2019_06_02_072240) do
     t.index ["restaurant_id"], name: "index_categories_restaurants_on_restaurant_id"
   end
 
+  create_table "reserves", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.integer "user_id"
+    t.date "date", null: false
+    t.integer "time", null: false
+    t.string "name", null: false
+    t.integer "member", null: false
+    t.string "e_mail", null: false
+    t.boolean "is_smoke", default: false
+    t.boolean "is_reserved", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reserves_on_restaurant_id"
+    t.index ["user_id"], name: "index_reserves_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "title"
     t.integer "rating"
     t.integer "budget_id"
     t.text "address"
+    t.integer "menu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.string "menu"
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p><p>
+<%= @reserf.name %>様
+<p>この度はTABLOGのご利用ありがとうございました。<br>予約はまだ完了していません。店舗からの連絡をもって予約完了となります。<br>今しばらくお待ちくださいませ。</p>
+<p>
+  <strong>予約店舗:</strong>
+  <%= @reserf.restaurant.title %>
+</p>
+
+<p>
+  <strong>予約日時:</strong>
+  <%= @reserf.date %><%= @reserf.time %>時から
+</p>
+
+<p>
+  <strong>ご利用人数:</strong>
+  <%= @reserf.member %>名様
+</p>
+
+<p>
+  <strong>ご連絡先:</strong>
+  <%= @reserf.e_mail %>
+</p>
+
+<p>
+  <strong>喫煙席希望:</strong>
+  <% if @reserf.is_smoke==0 %>
+  希望しない
+  <% else %>
+  希望する
+  <% end %>
+</p>
+
+<%= link_to '予約を修正する', edit_reserf_path(@reserf) %> |
+<%= link_to 'Homeに戻る', root_path %>
