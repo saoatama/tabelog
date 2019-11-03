@@ -1,24 +1,14 @@
-# README
+# 食べログの模写
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 作成意図
+- Railsでwebアプリを作る練習
+- Rubyで作られているものらしいので模写してみた
+- やる気が続かず未完
 
-Things you may want to cover:
+## ルート
+- admin:管理者用ページ。カテゴリや店舗の追加
+- user:ユーザ用ページ。口コミの確認。口コミを投稿するには登録が必要。パスワードを忘れたらどんまい。
+- / :店舗情報閲覧ページ
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 今後の展望
+- 本家ページのようなUIにする
